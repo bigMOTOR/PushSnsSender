@@ -9,18 +9,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SnsNotification {
 
-    private final String subject;
+    private final String topic;
     private final String message;
 
     //create a JSON
     @JsonCreator
-    public SnsNotification(@JsonProperty("subject") String subject, @JsonProperty("message") String message) {
-        this.subject = subject;
+    public SnsNotification(@JsonProperty("topic") String topic, @JsonProperty("message") String message) {
+        this.topic = topic;
         this.message = message;
     }
 
-    public String getSubject() {
-        return this.subject;
+    public String getTopic() {
+        return this.topic;
     }
 
     public String getMessage() {
@@ -29,7 +29,7 @@ public class SnsNotification {
 
     @Override
     public String toString() {
-        return "SnsNotification{" + "subject='" + this.subject + '\'' + ", message='" + this.message + '\'' + '}';
+        return "SnsNotification{" + "topic='" + this.topic + '\'' + ", message='" + this.message + '\'' + '}';
     }
 
 }
