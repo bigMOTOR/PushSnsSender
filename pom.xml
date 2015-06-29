@@ -65,6 +65,42 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+			<!-- Exclude property file from Jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<excludes>
+						<exclude>**/application.properties</exclude>
+						<exclude>**/logback.xml</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<!-- Move property files out of JAR and put in a some directory -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<copy todir="target" overwrite="true">
+									<fileset dir="src/main/resources/">
+										<include name="*.properties"/>
+										<include name="Logback.xml"/>
+									</fileset>
+								</copy>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 

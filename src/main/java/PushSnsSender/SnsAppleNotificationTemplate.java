@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Created by bigMOTOR on 18/06/15.
+ * SnsAppleNotificationTemplate description with providing to simple Json and SNS-APN's Json
+ * v. 1.0.0
+ * Created by bigMOTOR on 25/06/15.
  */
 
 public class SnsAppleNotificationTemplate {
@@ -42,6 +44,14 @@ public class SnsAppleNotificationTemplate {
 
     public String getSound() {
         return this.sound;
+    }
+
+    @Override
+    public String toString() {
+        return "{\"topic\": \"" + this.topic + "\",\n" +
+                "\"message\": \"" + this.message + "\",\n" +
+                "\"badge\": " + this.badge + ",\n" +
+                "\"sound\": \"" + this.sound + "\"}";
     }
 
     public String toSnSAppleString() {
