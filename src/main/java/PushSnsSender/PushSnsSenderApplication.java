@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by bigMOTOR on 17/06/15.
  */
 
-@SpringBootApplication      //- is equivalent to using @Configuration (Configuration class search Beans and etc..),
-                            //@EnableAutoConfiguration and @ComponentScan
+@SpringBootApplication      //- this is equivalent to using @Configuration (Configuration class search Beans and etc..) - @EnableAutoConfiguration and @ComponentScan
 
 public class PushSnsSenderApplication {
 
@@ -18,4 +17,5 @@ public class PushSnsSenderApplication {
         SpringApplication.run(PushSnsSenderApplication.class, args);
 
     }
+    
 }
