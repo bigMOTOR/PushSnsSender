@@ -38,7 +38,7 @@ public class SnsSenderController {   //requests controller class
 
 
     //Mapping annotation (all HTTP POST at /sns/send to sendNotification method
-    @RequestMapping(value = "/send", method = RequestMethod.POST)
+    @RequestMapping(value = "/send", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> sendNotification(@RequestBody SnsAppleNotificationTemplate notification) {    //call method with return a ResponseEntity directly
 
         try {
